@@ -3,6 +3,7 @@ import { Route, useParams } from 'react-router';
 import './Styling.css';
 import { useEffect, useState } from 'react';
 import { GetWeatherIcon } from '../data/WeatherIcons';
+import CelsiusIcon from '../assets/weather-icons/wi-celsius.svg';
 
 const WeatherRd: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -71,7 +72,8 @@ const WeatherRd: React.FC = () => {
           </IonCardHeader>
           <IonCardContent>
             <IonThumbnail>
-              <img src={weatherIcon} alt="" />
+              {/* <svg><source src={weatherIcon} /></svg> */}
+              <img id='weather-icon' src={weatherIcon} alt="" />
             </IonThumbnail>
             <IonCard color='primary'>
               <IonCardContent >

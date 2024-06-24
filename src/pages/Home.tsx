@@ -1,4 +1,4 @@
-import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonImg, IonItem, IonLabel, IonList, IonMenuButton, IonPage, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonImg, IonItem, IonButton, IonList, IonMenuButton, IonPage, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
 import { Route, useParams } from 'react-router';
 import './Styling.css';
 
@@ -24,24 +24,12 @@ const Home: React.FC = () => {
           <IonCardContent>
           <IonCardSubtitle>Podras encontrar varias herramientas aca como:</IonCardSubtitle>
             <IonList>
-              <IonItem routerLink='/app/gender-guessing'>
-                <IonLabel >Adivinador de sexo a partir de un nombre</IonLabel>
-              </IonItem>
-              <IonItem routerLink='/app/age-guessing'>
-                <IonLabel >Adivinador de edad a partir de un nombre</IonLabel>
-              </IonItem>
-              <IonItem routerLink='/app/country-universities'>
-                <IonLabel >Buscador de universidades a partir de un pais</IonLabel>
-              </IonItem>
-              <IonItem routerLink='/app/weather-rd'>
-                <IonLabel >Visor del clima de Republica Dominicana</IonLabel>
-              </IonItem>
-              <IonItem routerLink='/app/wordpress-visitor-page'>
-                <IonLabel >Ultimas noticias de Tails' Channel (Pagina de wordpress)</IonLabel>
-              </IonItem>
-              <IonItem routerLink='/app/about'>
-                <IonLabel >Acerca de (info del creador de la app)</IonLabel>
-              </IonItem>
+                <IonButton id='menuButton' expand="block" routerLink='/app/gender-guessing'>Adivinador de sexo a partir de un nombre</IonButton>
+                <IonButton id='menuButton' expand="block" routerLink='/app/age-guessing'>Adivinador de edad a partir de un nombre</IonButton>
+                <IonButton id='menuButton' expand="block" routerLink='/app/country-universities'>Buscador de universidades a partir de un pais</IonButton>
+                <IonButton id='menuButton' expand="block" routerLink='/app/weather-rd'>Visor del clima de Republica Dominicana</IonButton>
+                <IonButton id='menuButton' expand="block" routerLink='/app/wordpress-visitor-page'>Ultimas noticias de Tails' Channel (Pagina de wordpress)</IonButton>
+                <IonButton id='menuButton' expand="block" routerLink='/app/about'>Acerca de (info del creador de la app)</IonButton>
             </IonList>
           </IonCardContent>
         </IonCard>

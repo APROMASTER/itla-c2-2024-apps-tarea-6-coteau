@@ -71,7 +71,7 @@ const GenderGuessing: React.FC = () => {
             <h3><strong>Inserte un nombre y adivinaremos el sexo!</strong></h3>
           </IonCardHeader>
           <IonCardContent>
-            <IonInput labelPlacement="floating" placeholder="Nombre" onIonInput={(event) => setName((event.currentTarget as HTMLInputElement).value)}>
+            <IonInput labelPlacement="floating" fill="solid" placeholder="Nombre" onIonInput={(event) => setName((event.currentTarget as HTMLInputElement).value)}>
               <div slot="label">
                 Nombre
               </div>
