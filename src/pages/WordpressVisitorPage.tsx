@@ -1,4 +1,4 @@
-import { IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonIcon, IonImg, IonLabel, IonMenuButton, IonPage, IonText, IonThumbnail, IonTitle, IonToolbar, useIonLoading } from '@ionic/react';
+import { IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonIcon, IonImg, IonItem, IonLabel, IonMenuButton, IonPage, IonText, IonThumbnail, IonTitle, IonToolbar, useIonLoading } from '@ionic/react';
 import { Route, useParams } from 'react-router';
 import './Styling.css';
 import { useEffect, useState } from 'react';
@@ -73,7 +73,7 @@ const WordpressVisitorPage: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-      <IonImg style={{ display: 'block', margin: '0 auto', alignSelf: 'center', width: '25%', height: '25%' }} src="https://tailschannel.com/wp-content/uploads/2024/01/tcrad24webicon.png" alt="Logo de la pagina"/>
+      <a href="https://tailschannel.com"><IonImg style={{ display: 'block', margin: '0 auto', alignSelf: 'center', width: '25%', height: '25%' }} src="https://tailschannel.com/wp-content/uploads/2024/01/tcrad24webicon.png" alt="Logo de la pagina"/></a>
       <h1 style={{textAlign: 'center'}}>Ultimas noticias de Tails' Channel</h1>
         
         {currentSonicNews.map((news) =>
