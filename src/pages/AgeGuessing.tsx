@@ -2,6 +2,13 @@ import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonConte
 import { Route, useParams } from 'react-router';
 import './Styling.css';
 import { useRef, useState } from 'react';
+import ImagenFeto from '../assets/age-icons/feto.png';
+import ImagenBebe from '../assets/age-icons/bebe.png';
+import ImagenNiño from '../assets/age-icons/niño.png';
+import ImagenAdolescente from '../assets/age-icons/adolescente.png';
+import ImagenJovenAdulto from '../assets/age-icons/joven-adulto.png';
+import ImagenAdulto from '../assets/age-icons/adulto.png';
+import ImagenAnciano from '../assets/age-icons/anciano.png';
 
 interface AgeData {
   name: string,
@@ -24,6 +31,9 @@ const AgeGuessing: React.FC = () => {
   }
 
   const handleAgeClick = () => {
+    setAgePreview("");
+    setAgeLabel("");
+    setAge(0);
     presentLoading({
       message: 'Cargando...',
     });
@@ -32,29 +42,51 @@ const AgeGuessing: React.FC = () => {
   };
 
   const handleAgeData = (sexParam: AgeData) => {
+
+    if (name.toLowerCase().includes("fet")) {
+      setAgeLabel("Feto (SEGURO)");
+      setAgePreview(ImagenFeto);
+      setAge(0);
+      dismissLoading();
+      return;
+    }
+
     if (sexParam.age == null) {
       setAgeLabel("No identificado");
+      setAgePreview("");
       setAge(-1);
     }
     else {
       setAge(sexParam.age);
 
-      if (sexParam.age <= 1) {
-        setAgeLabel("bebe");
+      if (sexParam.age <= 0) {
+        setAgeLabel("Feto");
+        setAgePreview(ImagenFeto);
+      }
+      else if (sexParam.age <= 1) {
+        setAgeLabel("Bebe");
+        setAgePreview(ImagenBebe);
       }
       else if (sexParam.age < 13) {
-        setAgeLabel("niño");
+        setAgeLabel("Niño");
+        setAgePreview(ImagenNiño);
       }
       else if (sexParam.age < 18) {
-        setAgeLabel("adolescente");
+        setAgeLabel("Adolescente");
+        setAgePreview(ImagenAdolescente);
       }
       else if (sexParam.age < 25) {
-        setAgeLabel("joven adulto");
+        setAgeLabel("Joven adulto");
+        setAgePreview(ImagenJovenAdulto);
       }
       else if (sexParam.age < 65) {
-        setAgeLabel("adulto");
+        setAgeLabel("Adulto");
+        setAgePreview(ImagenAdulto);
       }
-      else setAgeLabel("anciano");
+      else {
+        setAgeLabel("Anciano");
+        setAgePreview(ImagenAnciano);
+      }
     }
     dismissLoading();
   }
