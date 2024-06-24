@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">itla-c2-2024-apps-tarea-6-coteau</string>
-    <string name="title_activity_main">itla-c2-2024-apps-tarea-6-coteau</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="app_name">Couteau</string>
+    <string name="title_activity_main">Couteau</string>
+    <string name="package_name">io.itla20220551.tarea6</string>
+    <string name="custom_url_scheme">io.itla20220551.tarea6</string>
 </resources>
