@@ -1,4 +1,4 @@
-import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonListHeader, IonMenuButton, IonModal, IonPage, IonTitle, IonToolbar, useIonLoading } from '@ionic/react';
+import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonListHeader, IonMenuButton, IonModal, IonPage, IonText, IonTitle, IonToolbar, useIonLoading } from '@ionic/react';
 import { Route, useParams } from 'react-router';
 import './Styling.css';
 import { useRef, useState } from 'react';
@@ -16,17 +16,19 @@ const CountryUniversities: React.FC = () => {
   const countryNameIsEmpty = countryName?.length == 0;
   const modalRef = useRef<HTMLIonModalElement>(null);
 
+  const getFetchURL = `http://universities.hipolabs.com/search?country=${countryName}`;
+
   const fetchUniversity = () => {
-    fetch(`http://universities.hipolabs.com/search?country=${countryName}`)
+    fetch(getFetchURL)
       .then(response => response.json())
       .then(data => handleUniversityData(data as UniversityData[]))
-      .catch(error => console.error(error));
-  }
+  };
 
   const handleUniversityClick = () => {
     setUniversities([]);
     presentLoading({
       message: 'Cargando universidades...',
+      duration: 10000,
     });
     fetchUniversity();
     modalRef.current?.present();
@@ -36,7 +38,7 @@ const CountryUniversities: React.FC = () => {
     console.log(uniParam);
     setUniversities(uniParam);
     dismissLoading();
-  }
+  };
 
   return (
     <IonPage>
@@ -74,6 +76,7 @@ const CountryUniversities: React.FC = () => {
               </IonButtons>
             </IonToolbar>
           </IonHeader>
+          <IonText>datos conseguidos de: <a href={getFetchURL}>{getFetchURL}</a></IonText>
           <IonContent className="ion-padding">
             <IonList>
               {universities.map((university) => 

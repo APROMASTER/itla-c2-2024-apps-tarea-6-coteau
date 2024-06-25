@@ -28,7 +28,7 @@ const AgeGuessing: React.FC = () => {
     fetch(`https://api.agify.io/?name=${name}`)
       .then(response => response.json())
       .then(data => handleAgeData((data as AgeData)))
-  }
+  };
 
   const handleAgeClick = () => {
     setAgePreview("");
@@ -49,7 +49,7 @@ const AgeGuessing: React.FC = () => {
       setAge(0);
       dismissLoading();
       return;
-    }
+    };
 
     if (sexParam.age == null) {
       setAgeLabel("No identificado");
